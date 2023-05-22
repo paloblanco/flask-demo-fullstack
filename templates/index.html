@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dropdown Events</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h2>Government Spending</h2>
+    <p>Numbers on hover reflect the rounded USD (in millions) spent in each category in 2017.</p>
+    <select id="selDataset">
+        <option value="australia">Australia</option>
+        <option value="brazil">Brazil</option>
+        <option value="uk">United Kingdom</option>
+        <option value="mexico">Mexico</option>
+        <option value="singapore">Singapore</option>
+        <option value="southAfrica">South Africa</option>
+    </select>
+
+    <div id="pie"></div>
+
+    <p>Data Sources:<br />
+        <ul>
+            <li>
+                <a href="https://data.worldbank.org/indicator/NE.CON.GOVT.ZS">General government final consumption expenditure (% of GDP)</a>
+            </li>
+            <li>
+                <a href="https://data.worldbank.org/indicator/SE.XPD.TOTL.GD.ZS">Government expenditure on education, total (% of GDP)</a>
+            </li>
+            <li>
+                <a href="https://data.worldbank.org/indicator/SH.XPD.GHED.GD.ZS">Domestic general government health expenditure (% of GDP)</a>
+            </li>
+            <li>
+                <a href="https://data.worldbank.org/indicator/GB.XPD.RSDV.GD.ZS">Research and development expenditure (% of GDP)</a>
+            </li>
+            <li>
+                <a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.CD">GDP (current US$)</a>
+            </li>
+            </ul>
+    </p>
+    <script src="{{ url_for('static', filename='js/data.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/plots.js') }}"></script>
+</body>
+</html>
