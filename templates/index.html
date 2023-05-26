@@ -9,39 +9,34 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-    <h2>Government Spending</h2>
-    <p>Numbers on hover reflect the rounded USD (in millions) spent in each category in 2017.</p>
+    <h2>Titanic Survivors</h2>
+    <p>Change the dropdown below to update the plots</p>
     <select id="selDataset">
-        <option value="australia">Australia</option>
-        <option value="brazil">Brazil</option>
-        <option value="uk">United Kingdom</option>
-        <option value="mexico">Mexico</option>
-        <option value="singapore">Singapore</option>
-        <option value="southAfrica">South Africa</option>
+        <option value="Survived">Survived</option>
+        <option value="Died">Died</option>
     </select>
 
-    <div id="pie"></div>
+    <div id="plot"></div>
 
     <p>Data Sources:<br />
         <ul>
             <li>
-                <a href="https://data.worldbank.org/indicator/NE.CON.GOVT.ZS">General government final consumption expenditure (% of GDP)</a>
+                <p>Fill this out!!!</p>
             </li>
             <li>
-                <a href="https://data.worldbank.org/indicator/SE.XPD.TOTL.GD.ZS">Government expenditure on education, total (% of GDP)</a>
+                <p>1</p>
             </li>
             <li>
-                <a href="https://data.worldbank.org/indicator/SH.XPD.GHED.GD.ZS">Domestic general government health expenditure (% of GDP)</a>
+                <p>2</p>
             </li>
             <li>
-                <a href="https://data.worldbank.org/indicator/GB.XPD.RSDV.GD.ZS">Research and development expenditure (% of GDP)</a>
+                <p>3</p>
             </li>
             <li>
-                <a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.CD">GDP (current US$)</a>
+                <p>4</p>
             </li>
             </ul>
     </p>
-    <script src="{{ url_for('static', filename='js/data.js') }}"></script>
     <script src="{{ url_for('static', filename='js/plots.js') }}"></script>
 </body>
 </html>
