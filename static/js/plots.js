@@ -5,7 +5,6 @@ function init() {
   d3.json(apiTitanic).then(function(data) {
       let filter = "Survived"
       data = data['Survived']
-      console.log(data);
       let dataPlot = [{
         x: Object.keys(data),
         y: Object.values(data),
@@ -23,7 +22,6 @@ function refreshPlot() {
   // Call function to update the chart
   d3.json(apiTitanic).then(function(data) {
     data = data[filter]
-    console.log(data);
     let dataPlot = [{
       x: Object.keys(data),
       y: Object.values(data),
