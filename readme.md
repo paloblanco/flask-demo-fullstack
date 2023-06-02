@@ -24,6 +24,7 @@ TODO
 - JS
 - d3
 - Plotly
+- SimpleCSS
 
 ---------------
 

@@ -33,38 +33,22 @@ app = Flask(__name__)
 #################################################
 
 @app.route("/")
-def welcome():
-    """List all available api routes."""
-    # return (
-    #     f"Available Routes:<br/>"
-    #     f"/api/v1.0/names<br/>"
-    #     f"/api/v1.0/passengers"
-    # )
+def main_page():
+    """
+    Render the main page of the webapp.
+    Currently, the only api route accessed by the web page is 'passengersbyclass'.
+    """
     return render_template('index.html')
-
-
-@app.route("/api/v1.0/names")
-def names():
-    # Create our session (link) from Python to the DB
-    session = Session(engine)
-
-    """Return a list of all passenger names"""
-    # Query all passengers
-    results = session.query(Passenger.name).all()
-
-    session.close()
-
-    # Convert list of tuples into normal list
-    all_names = list(np.ravel(results))
-
-    return jsonify(all_names)
 
 
 @app.route("/api/v1.0/passengersbyclass")
 def passengers_by_class():
+    """
+    Return a dictionary of summary data. Data are structured as follows:
+    Data[Survived_or_Died][Class_1_2_or_3] = count_of_passengers_matching_this_description
+    """
+    
     session = Session(engine)
-
-    """Return a list of passenger data including the name, age, and sex of each passenger"""
     # Query all passengers
     results = session.query(Passenger.name, Passenger.age, 
                             Passenger.sex, Passenger.pclass,
@@ -76,8 +60,28 @@ def passengers_by_class():
     results = {}
     results["Survived"] = df[df['survived']==1].groupby(['pclass'])['name'].count().to_dict()
     results["Died"] = df[df['survived']==0].groupby(['pclass'])['name'].count().to_dict()
-    print(results)
     return jsonify(results)
+
+
+# The following routes are not currently used by the application, 
+# but can still be accessed when the flask app is running
+
+@app.route("/api/v1.0/names")
+def names():
+    """Return a list of all passenger names"""
+
+    # Create our session (link) from Python to the DB
+    session = Session(engine)
+
+    # Query all passengers
+    results = session.query(Passenger.name).all()
+
+    session.close()
+
+    # Convert list of tuples into normal list
+    all_names = list(np.ravel(results))
+
+    return jsonify(all_names)
 
 
 @app.route("/api/v1.0/passengers")

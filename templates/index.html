@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Titanic Survivors</title>
+    <title>Titanic Passengers</title>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
 </head>
 <body>
-    <h1>Titanic Survivors</h1>
+    <h1>Titanic Passengers</h1>
     <p>Change the dropdown below to update the plots</p>
     <select id="selDataset">
         <option value="Survived">Survived</option>
@@ -29,11 +29,29 @@
             </li>
         </ul>
 
+    <h4>Accessing the Titanic Passenger API</h4>
+    <p>The following endpoints are available to access data:</p>
+    <ul>
+        <li>
+            <a href="/api/v1.0/names">/api/v1.0/names</a>
+            <p>Access a list of all passenger names</p>
+        </li>
+        <li>
+            <a href="/api/v1.0/passengers">/api/v1.0/passengers</a>
+            <p>Return a list of passenger data including the name, age, and sex of each passenger</p>
+        </li>
+        <li>
+            <a href="/api/v1.0/passengerbyname/<name>">/api/v1.0/passengerbyname/&lt;name&gt;</a>
+            <p>Search for passengers by name. For example:</p>
+            <a href="/api/v1.0/passengerbyname/Behr,%20Mr%20Karl%20Howell">/api/v1.0/passengerbyname/Behr,%20Mr%20Karl%20Howell</a>
+        </li>
+    </ul>
+    
     <h4>Source Code:</h4>
-    <p>https://github.com/paloblanco/flask-demo-fullstack</p>
-
+    <a href="https://github.com/paloblanco/flask-demo-fullstack">https://github.com/paloblanco/flask-demo-fullstack</a>
+ 
     <h4>Contact:</h4>
-    <p>Rocco Panella: https://github.com/paloblanco</p>
+    <a href="https://github.com/paloblanco">Rocco Panella</a>
 
     <script src="{{ url_for('static', filename='js/plots.js') }}"></script>
 </body>
