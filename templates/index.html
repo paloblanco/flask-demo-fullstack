@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dropdown Events</title>
+    <title>Titanic Survivors</title>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
 </head>
 <body>
-    <h2>Titanic Survivors</h2>
+    <h1>Titanic Survivors</h1>
     <p>Change the dropdown below to update the plots</p>
     <select id="selDataset">
         <option value="Survived">Survived</option>
@@ -19,25 +19,22 @@
 
     <div id="plot"></div>
 
-    <p>Data Sources:<br />
+    <h4>Data Sources:</h4>
         <ul>
             <li>
-                <p>Fill this out!!!</p>
+                <p>Titanic Database: To Do</p>
             </li>
             <li>
                 <p>1</p>
             </li>
-            <li>
-                <p>2</p>
-            </li>
-            <li>
-                <p>3</p>
-            </li>
-            <li>
-                <p>4</p>
-            </li>
-            </ul>
-    </p>
+        </ul>
+
+    <h4>Source Code:</h4>
+    <p>https://github.com/paloblanco/flask-demo-fullstack</p>
+
+    <h4>Contact:</h4>
+    <p>Rocco Panella: https://github.com/paloblanco</p>
+
     <script src="{{ url_for('static', filename='js/plots.js') }}"></script>
 </body>
 </html>
